@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <style>
     body {
@@ -47,15 +54,21 @@
     }
     #one {
       position: absolute;
+      top: 100px;
       left: 50%;
-      top: 50%;
       transform: translate(-50%, -50%);
     }
-    
+    #two {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   </style>
   <body>
     <div id="one" class="circle"></div>
-    
+    <div id="two" class="circle"></div>
+
     <div id="lyric">
       01/10/2005 <br />
       <br />
@@ -74,9 +87,9 @@
       if (i < singleLyric.length) {
         document.getElementById("lyric").innerHTML = singleLyric[i];
         i++;
-      }
-      else{
-        document.getElementById("lyric").innerHTML = "Thu Huyền <333";
+      } else {
+        document.getElementById("lyric").innerHTML =
+          '<i class="fa-regular fa-heart"></i>';
       }
       arr.forEach((item) => {
         item.style.animation = "scale 1s linear infinite";
