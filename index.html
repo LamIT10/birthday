@@ -43,7 +43,7 @@
 
     @keyframes scale {
       0% {
-        transform: scale(5);
+        transform: scale(7);
       }
       50% {
         box-shadow: 0 0 15px rgb(255, 183, 0);
@@ -65,7 +65,7 @@
       transform: translate(-50%, -50%);
     }
   </style>
-  <body>
+  <body onclick="start()">
     <div id="one" class="circle"></div>
     <div id="two" class="circle"></div>
 
@@ -74,7 +74,10 @@
       <br />
       01/10/2024
     </div>
-    <button id="start" onclick="start()">Start</button>
+    <audio id="au1" controls style="display: none">
+      <source src="au1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   </body>
 
   <script>
@@ -84,6 +87,7 @@
     var i = 0;
     var arr = document.querySelectorAll(".circle");
     function start() {
+      document.getElementById("au1").play();
       if (i < singleLyric.length) {
         document.getElementById("lyric").innerHTML = singleLyric[i];
         i++;
@@ -95,7 +99,7 @@
         item.style.animation = "scale 1s linear infinite";
       });
 
-      setTimeout(start, 500);
+      setTimeout(start, 700);
     }
   </script>
 </html>
