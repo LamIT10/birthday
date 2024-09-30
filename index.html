@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: rgb(35, 39, 73);
+    }
+    #lyric {
+      font-size: 50px;
+      margin: 0 auto;
+      width: max-content;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 0 10px rgb(255, 183, 0);
+      letter-spacing: 5px;
+    }
+
+    .circle {
+      transform-origin: center;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgb(255, 245, 183);
+      transition: all 0.5s;
+      box-shadow: 0 0 25px rgb(255, 183, 0);
+    }
+
+    @keyframes scale {
+      0% {
+        transform: scale(5);
+      }
+      50% {
+        box-shadow: 0 0 15px rgb(255, 183, 0);
+      }
+      100% {
+        box-shadow: 0 0 25px rgb(255, 183, 0);
+      }
+    }
+    #one {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+  </style>
+  <body>
+    <div id="one" class="circle"></div>
+    
+    <div id="lyric">
+      01/10/2005 <br />
+      <br />
+      01/10/2024
+    </div>
+    <button id="start" onclick="start()">Start</button>
+  </body>
+
+  <script>
+    var lyric =
+      "HAPPY BIRTHDAY TO YOU HAPPY BIRTHDAY TO YOU HAPPY BIRTHDAY HAPPY BIRTHDAY HAPPY BIRTHDAY TO YOU";
+    var singleLyric = lyric.split(" ");
+    var i = 0;
+    var arr = document.querySelectorAll(".circle");
+    function start() {
+      if (i < singleLyric.length) {
+        document.getElementById("lyric").innerHTML = singleLyric[i];
+        i++;
+      }
+      else{
+        document.getElementById("lyric").innerHTML = "Thu Huyền <333";
+      }
+      arr.forEach((item) => {
+        item.style.animation = "scale 1s linear infinite";
+      });
+
+      setTimeout(start, 500);
+    }
+  </script>
+</html>
